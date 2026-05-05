@@ -22,7 +22,7 @@ export function rowToMessage(r: any): ChatMessage {
     content: r.content,
     detected_language: r.detected_language,
     confidence: r.confidence != null ? Number(r.confidence) : null,
-    top_predictions: (r.top_predictions as Json as Prediction[] | null) ?? null,
+    top_predictions: (r.top_predictions as unknown as Prediction[] | null) ?? null,
     translation: r.translation,
     target_language: r.target_language,
     ai_reply: r.ai_reply,
